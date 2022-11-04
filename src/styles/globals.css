@@ -21,12 +21,20 @@ a {
   box-sizing: border-box;
 }
 
-@media (prefers-color-scheme: dark) {
-  html {
-    color-scheme: dark;
+
+
+@layer components {
+  .aside {
+    @apply transform top-0 right-0 w-64  bg-gray-700  fixed h-full overflow-auto ease-in-out transition-all duration-300 z-30 ;
   }
-  body {
-    color: white;
-    background: black;
-  }
+
+  [dir="rtl"] .right-0
+{
+  @apply left-0 ;
+}
+ [dir="rtl"] .translate-x-0
+{
+  @apply -translate-x-0 ;
+}
+
 }

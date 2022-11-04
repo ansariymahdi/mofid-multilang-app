@@ -1,2 +1,3 @@
 # mofid-multilang-app
-Test for Mofid Compony 
+
+Test Multi-language for Mofid company

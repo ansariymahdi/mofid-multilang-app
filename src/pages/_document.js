@@ -6,6 +6,8 @@ class MyDocument extends Document {
     return { ...initialProps }
   }
 
+
+
   render() {
     return (
       <Html lang={this.props.locale} dir={this.props.locale === 'en' ? 'ltr' : 'rtl'}>

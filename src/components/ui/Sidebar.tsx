@@ -7,9 +7,6 @@ import {useContext} from "react";
 export const Sidebar = ({menuItems, isOpen}: SideBarTypes) => {
   const {t} = useTranslation();
   const {direction} = useContext(LanguageContext);
-  console.log("====================================");
-  console.log(direction);
-  console.log("================22====================");
 
   const router = useRouter();
   const changeLocale = (lang: string) => {

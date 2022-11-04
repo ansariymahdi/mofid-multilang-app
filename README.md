@@ -1,2 +1,2 @@
-# -mofid-multilang-app
+# mofid-multilang-app
 Test for Mofid Compony 

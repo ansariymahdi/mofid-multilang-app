@@ -1,23 +1,32 @@
 import {SideBarTypes} from "@types";
 import {useRouter} from "next/router";
 import {useTranslation} from "next-i18next";
+import {LanguageContext} from "@lang";
+import {useContext} from "react";
 
 export const Sidebar = ({menuItems, isOpen}: SideBarTypes) => {
   const {t} = useTranslation();
+  const {direction} = useContext(LanguageContext);
+  console.log("====================================");
+  console.log(direction);
+  console.log("================22====================");
 
   const router = useRouter();
   const changeLocale = (lang: string) => {
     router.push(router.asPath, undefined, {locale: lang});
   };
+
+  const getSideTranslate = (isOpen: boolean, dir: string) => {
+    if (direction === "ltr") {
+      return isOpen ? "-translate-x-full" : "translate-x-0";
+    }
+    if (direction === "rtl") {
+      return isOpen ? "translate-x-full" : "translate-x-0";
+    }
+  };
   return (
     <aside
-      className={`aside  md:hidden  ${
-        isOpen
-          ? "translate-x-0"
-          : router.locale === "fa"
-          ? "translate-x-full"
-          : "-translate-x-full"
-      }  `}
+      className={`aside  md:hidden  ${getSideTranslate(isOpen, direction)}  `}
     >
       <ul className="flex flex-col p-4 mt-4 ">
         {menuItems.map(({label}, index) => {

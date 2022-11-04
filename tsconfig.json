@@ -20,6 +20,8 @@
       "@components/*": ["src/components/*"],
       "@types": ["src/types"],
       "@types/*": ["src/types/*"],
+      "@lang": ["src/lang"],
+
     }
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],

@@ -1,7 +1,8 @@
+import {LanguageContext} from "@lang";
 import {MenuItem} from "@types";
 import {useTranslation} from "next-i18next";
 import {useRouter} from "next/router";
-import {useState} from "react";
+import {useState, useContext} from "react";
 import {Sidebar} from "./Sidebar";
 
 const items: MenuItem[] = [
@@ -94,7 +95,9 @@ export const Navbar = () => {
 
         <a
           className=" hidden  flex-1 justify-end cursor-pointer md:flex"
-          onClick={() => changeLocale(router.locale === "en" ? "fa" : "en")}
+          onClick={() => {
+            changeLocale(router.locale === "en" ? "fa" : "en");
+          }}
         >
           {t("En/Fa")}
         </a>

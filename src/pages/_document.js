@@ -10,7 +10,7 @@ class MyDocument extends Document {
 
   render() {
     return (
-      <Html lang={this.props.locale} dir={this.props.locale === 'en' ? 'ltr' : 'rtl'}>
+      <Html lang={this.props.locale} >
         <Head>
           <link rel="manifest" href="/manifest.json" />
         </Head>
